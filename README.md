@@ -1,4 +1,4 @@
 # proyecto
-Proyecto unidad 4: Colonizador Automático<br>
+Proyecto unidad 4: Cotizador Automático<br>
 
 Proyecto base iniciado<br>
