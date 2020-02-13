@@ -12,10 +12,10 @@ var diaNacimiento = prompt("Ingrese el día de nacimiento: ", "Ejemplo: Si naci�
 var mesNacimiento = prompt("Ingrese el mes de nacimiento: ", "Ejemplo: Si nació en enero, solamente ingresar 1 porque es el mes 1");
 var anioNacimiento = prompt("Ingrese el año de nacimiento: ", "Ejemplo: Si nació el 22 de enero de 1987, solamente ingresar 1987");
 //Datos conyuge e hijos
-/*var conyuge = prompt("¿Tiene cónyuge?", "SI/NO");
-var edadConyugue = prompt("Que edad tiene su conyuge: ", "Ejemplo: Si tiene 26 años, solamente ingrese 26");
-var hijos = prompt("¿Tiene hijos?", "SI/NO");
-var cantidadHijos = prompt("Ingrese la cantidad de hijos menores de 21 años:", "Por favor ingrese únicamente números");*/
+var conyuge = prompt("¿Tiene cónyuge?", "SI/NO");
+/*var edadConyugue = prompt("Que edad tiene su conyuge: ", "Ejemplo: Si tiene 26 años, solamente ingrese 26");
+var hijos = prompt("¿Tiene hijos?", "SI/NO");*/
+var cantidadHijos = prompt("Ingrese la cantidad de hijos menores de 21 años:", "Por favor ingrese únicamente números");
 
 //Calcular edad
 var anios = anioActual +1900 - anioNacimiento;
@@ -24,7 +24,7 @@ if (mesActual < mesNacimiento){
 }if ((mesNacimiento == mesActual) && (diaActual < diaNacimiento)){
 	anios--;
 }
-//Cargos
+//Recargos asegurado
 comision = precioBase * 0.30; 
 var recargos = 0;	
 var edad = anios;
@@ -52,6 +52,38 @@ if (edad < 18){
 	console.log(recargos);
 }if (edad > 65){
 	console.log("No se puede asegurar");
+}
+//Regargos por conyugue 
+if (conyuge === "Si"){
+	var diaNacimientoC = prompt("Ingrese el día de nacimiento: ", "Ejemplo: Si nació el 22 de enero, solamente ingresar 22");
+	var mesNacimientoC = prompt("Ingrese el mes de nacimiento: ", "Ejemplo: Si nació en enero, solamente ingresar 1 porque es el mes 1");
+	var anioNacimientoC = prompt("Ingrese el año de nacimiento: ", "Ejemplo: Si nació el 22 de enero de 1987, solamente ingresar 1987");
+	var aniosC = anioActual +1900 - anioNacimientoC;
+	if (mesActual < mesNacimientoC){
+	aniosC--;
+	}if ((mesNacimientoC == mesActual) && (diaActual < diaNacimientoC)){
+	aniosC--;
+	}console.log(aniosC);
+}
+var recargosC = 0;
+if (aniosC < 30){
+	recargosC = precioBase * 0.01;
+	console.log(recargosC);
+}if (aniosC > 30 && aniosC < 40){
+	recargosC = precioBase * 0.02;
+	console.log(recargosC);
+}if (aniosC > 40 && aniosC < 50){
+	recargosC = precioBase * 0.03;
+	console.log(recargosC); 
+}if (aniosC > 50 && aniosC < 70){
+	recargosC = precioBase * 0.05;
+	console.log(recargosC);
+}
+//Recargos por hijos menores de 21
+var recargosH = 0;
+if (cantidadHijos > 0){
+	recargosH = precioBase * cantidadHijos * 0.01;
+	console.log(recargosH);
 }
 
 
