@@ -1,4 +1,3 @@
- <script type="text/javascript" src=app.js></script>
 //Cotizador Automático
 //Variables
 const precioBase = 250;
@@ -8,7 +7,7 @@ var anioActual = fecha.getYear();
 var mesActual = fecha.getMonth() + 1;;
 var diaActual = fecha.getDate();
 //Datos Cliente
-//var nombreCompleto = prompt("Ingrese su nombre completo: ", "Nombres y Apellidos");
+var nombreCompleto = prompt("Ingrese su nombre completo: ", "Nombres y Apellidos");
 var diaNacimiento = prompt("Ingrese el día de nacimiento: ", "Ejemplo: Si nació el 22 de enero, solamente ingresar 22");
 var mesNacimiento = prompt("Ingrese el mes de nacimiento: ", "Ejemplo: Si nació en enero, solamente ingresar 1 porque es el mes 1");
 var anioNacimiento = prompt("Ingrese el año de nacimiento: ", "Ejemplo: Si nació el 22 de enero de 1987, solamente ingresar 1987");
@@ -16,7 +15,7 @@ var anioNacimiento = prompt("Ingrese el año de nacimiento: ", "Ejemplo: Si naci
 var conyuge = prompt("¿Tiene cónyuge?", "SI/NO");
 /*var edadConyugue = prompt("Que edad tiene su conyuge: ", "Ejemplo: Si tiene 26 años, solamente ingrese 26");
 var hijos = prompt("¿Tiene hijos?", "SI/NO");*/
-var cantidadHijos = prompt("Ingrese la cantidad de hijos menores de 21 años:", "Por favor ingrese únicamente números");
+//var cantidadHijos = prompt("Ingrese la cantidad de hijos menores de 21 años:", "Por favor ingrese únicamente números");
 
 //Calcular edad
 var anios = anioActual +1900 - anioNacimiento;
@@ -59,6 +58,7 @@ if (conyuge === "Si"){
 	var diaNacimientoC = prompt("Ingrese el día de nacimiento: ", "Ejemplo: Si nació el 22 de enero, solamente ingresar 22");
 	var mesNacimientoC = prompt("Ingrese el mes de nacimiento: ", "Ejemplo: Si nació en enero, solamente ingresar 1 porque es el mes 1");
 	var anioNacimientoC = prompt("Ingrese el año de nacimiento: ", "Ejemplo: Si nació el 22 de enero de 1987, solamente ingresar 1987");
+	var cantidadHijos = prompt("Ingrese la cantidad de hijos menores de 21 años:", "Por favor ingrese únicamente números");
 	var aniosC = anioActual +1900 - anioNacimientoC;
 	if (mesActual < mesNacimientoC){
 	aniosC--;
@@ -86,5 +86,13 @@ if (cantidadHijos > 0){
 	recargosH = precioBase * cantidadHijos * 0.01;
 	console.log(recargosH);
 }
-
-
+var Total = precioBase + recargos + recargosH + recargosC + comision;
+document.write("Bienvenido a seguros TK-U <br>");
+document.write("Gracias por elegir nuestros servicios " + nombreCompleto + "<br>")
+document.write("Precio Base---------------------------Q."+precioBase + "<br>");
+document.write("Recargos por edad---------------------Q."+recargos + "<br>");
+document.write("Recargos por conyuge------------------Q."+recargosC + "<br>");
+document.write("Recargos por hijos menores de 21 años-Q."+recargosH + "<br>");
+document.write("Comision------------------------------Q."+comision + "<br>");
+document.write("_____________________________________________________________"+ "<br>");
+document.write("TOTAL---------------------------------Q."+Total + "<br>");
