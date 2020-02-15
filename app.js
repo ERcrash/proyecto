@@ -29,28 +29,28 @@ comision = precioBase * 0.30;
 var recargos = 0;	
 var edad = anios;
 if (edad < 18){
-	console.log("Eres menor de edad, no te puedes asegurar")
-}if (edad >= 21 && edad < 25){
+	document.write("Eres menor de edad, no te puedes asegurar <br>");
+}else if (edad >= 21 && edad < 25){
 	recargos = precioBase * 0.01;
 	console.log(edad);
 	console.log(recargos);
-}if (edad >= 25 && edad < 30){
+}else if (edad >= 25 && edad < 30){
 	recargos = precioBase * 0.02;
 	console.log(edad);
 	console.log(recargos);
-}if (edad >= 30 && edad < 40){
+}else if (edad >= 30 && edad < 40){
 	recargos = precioBase * 0.05;
 	console.log(edad);
 	console.log(recargos);
-}if (edad >= 40 && edad < 50){
+}else if (edad >= 40 && edad < 50){
 	recargos = precioBase * 0.08;
 	console.log(edad);
 	console.log(recargos);
-}if (edad >= 50 && edad <= 65){
+}else if (edad >= 50 && edad <= 65){
 	recargos = precioBase * 0.12;
 	console.log(edad);
 	console.log(recargos);
-}if (edad > 65){
+}else if (edad > 65){
 	console.log("No se puede asegurar");
 }
 //Regargos por conyugue 
