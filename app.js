@@ -1,3 +1,4 @@
+ <script type="text/javascript" src=app.js></script>
 //Cotizador Automático
 //Variables
 const precioBase = 250;
