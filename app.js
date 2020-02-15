@@ -51,7 +51,7 @@ if (edad < 18){
 	console.log(edad);
 	console.log(recargos);
 }else if (edad > 65){
-	console.log("No se puede asegurar");
+	document.write("No se puede asegurar <br>");
 }
 //Regargos por conyugue 
 if (conyuge === "Si"){
